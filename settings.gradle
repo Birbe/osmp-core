@@ -1,0 +1,3 @@
+rootProject.name = 'osmp-core'
+
+include 'osmp-core-common', 'osmp-core-spigot', 'osmp-core-sponge', 'osmp-core-nukkit'

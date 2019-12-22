@@ -1,0 +1,27 @@
+repositories {
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        name = 'nukkitx-repo'
+        url = 'https://repo.nukkitx.com/main/'
+    }
+}
+
+dependencies {
+    compile project(':osmp-core-common')
+    compileOnly 'cn.nukkit:nukkit:1.0-SNAPSHOT'
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand 'version': project.version
+    }
+}
+
+shadowJar {
+    dependencies {
+        include(dependency(':osmp-core-common'))
+    }
+}

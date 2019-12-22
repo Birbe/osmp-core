@@ -1,0 +1,6 @@
+name: Osmp Core
+version: @version@
+main: com.funniray.osmpcore.OsmpCoreNukkit
+description: Open Soure Minigame Core for Nukkit
+
+api: ["1.0.0"]
