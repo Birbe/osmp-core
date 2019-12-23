@@ -7,6 +7,7 @@ public final class OsmpCoreNukkit extends PluginBase {
     @Override
     public void onEnable() {
         // Plugin startup logic
+
     }
 
     @Override

@@ -1,9 +1,8 @@
-package com.funniray.osmpcore.Game;
+package com.funniray.osmpcore.Interface.Game;
 
-import com.funniray.osmpcore.Player.IPlayer;
-import com.funniray.osmpcore.Team.ITeam;
+import com.funniray.osmpcore.Interface.Entity.Player.IPlayer;
+import com.funniray.osmpcore.Interface.Team.ITeam;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 public interface IGame {
@@ -15,4 +14,7 @@ public interface IGame {
     public void addParticipant();
 
     public void registerTeam();
+
+    public void startGame();
+
 }

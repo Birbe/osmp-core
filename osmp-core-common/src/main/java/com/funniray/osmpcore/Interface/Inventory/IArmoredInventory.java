@@ -1,6 +1,6 @@
-package com.funniray.osmpcore.Inventory;
+package com.funniray.osmpcore.Interface.Inventory;
 
-import com.funniray.osmpcore.Item.IItemStack;
+import com.funniray.osmpcore.Interface.Item.IItemStack;
 
 import java.util.Collection;
 

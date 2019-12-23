@@ -1,6 +1,6 @@
-package com.funniray.osmpcore.Team;
+package com.funniray.osmpcore.Interface.Team;
 
-import com.funniray.osmpcore.Player.IPlayer;
+import com.funniray.osmpcore.Interface.Entity.Player.IPlayer;
 
 import java.util.Collection;
 
