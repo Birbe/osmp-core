@@ -4,11 +4,11 @@ import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class OItem implements IItem {
+public class BukkitItem implements IItem {
 
     private Material material;
 
-    public OItem(Material material) {
+    public BukkitItem(Material material) {
         this.material = material;
     }
 
@@ -19,7 +19,8 @@ public class OItem implements IItem {
     }
 
     @Override
-    public int getId() {
-        return material.getId(); //TODO: this is deprecated so a new system will need to be made later
+    public String getId() {
+        ItemStack dummyStack = new ItemStack(material);
+        return dummyStack.getType().getKey().toString();
     }
 }

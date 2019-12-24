@@ -2,14 +2,14 @@ package com.funniray.osmpcore.Interface.Item;
 
 import org.bukkit.inventory.ItemStack;
 
-public class OItemStack implements IItemStack {
+public class BukkitItemStack implements IItemStack {
 
     private ItemStack itemStack;
-    private OItem item;
+    private BukkitItem item;
     private int quantity;
 
-    public OItemStack(ItemStack itemStackIn) {
-        this.item = new OItem(itemStackIn.getType());
+    public BukkitItemStack(ItemStack itemStackIn) {
+        this.item = new BukkitItem(itemStackIn.getType());
         this.itemStack = itemStackIn;
         this.quantity = itemStackIn.getAmount();
     }

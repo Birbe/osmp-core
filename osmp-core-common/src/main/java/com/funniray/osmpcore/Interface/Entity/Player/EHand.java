@@ -1,6 +1,6 @@
 package com.funniray.osmpcore.Interface.Entity.Player;
 
-public enum IHand {
+public enum EHand {
 
     LEFT,
     RIGHT

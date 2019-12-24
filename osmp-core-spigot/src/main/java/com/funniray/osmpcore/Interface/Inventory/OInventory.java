@@ -1,7 +1,7 @@
 package com.funniray.osmpcore.Interface.Inventory;
 
 import com.funniray.osmpcore.Interface.Item.IItemStack;
-import com.funniray.osmpcore.Interface.Item.OItemStack;
+import com.funniray.osmpcore.Interface.Item.BukkitItemStack;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -16,7 +16,7 @@ public class OInventory implements IInventory {
     public OInventory(Inventory inventory) {
         this.inventory = inventory;
         for(ItemStack stack : inventory.getContents()) {
-            OItemStack ostack = new OItemStack(stack);
+            BukkitItemStack ostack = new BukkitItemStack(stack);
             items.add(ostack);
         }
     }

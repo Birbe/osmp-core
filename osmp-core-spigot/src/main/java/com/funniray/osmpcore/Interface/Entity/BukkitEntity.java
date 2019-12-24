@@ -1,22 +1,22 @@
 package com.funniray.osmpcore.Interface.Entity;
 
 import com.funniray.osmpcore.Interface.World.ILocation;
-import com.funniray.osmpcore.Interface.World.OLocation;
+import com.funniray.osmpcore.Interface.World.BukkitLocation;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 
-public class OEntity implements IEntity {
+public class BukkitEntity implements IEntity {
 
     private Entity entity;
 
-    public OEntity(Entity e) {
-        this.entity = e;
+    public BukkitEntity(Entity bukkitEntity) {
+        this.entity = bukkitEntity;
     }
 
     @Override
     public ILocation getPosition() {
-        return new OLocation(entity.getLocation());
+        return new BukkitLocation(entity.getLocation());
     }
 
     public void setPosition(ILocation l) {

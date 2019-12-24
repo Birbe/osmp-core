@@ -1,6 +1,6 @@
 package com.funniray.osmpcore.Interface.World;
 
-public class OPosition implements IPosition {
+public class BukkitPosition implements IPosition {
 
     protected double x;
     protected double y;

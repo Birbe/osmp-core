@@ -8,6 +8,6 @@ public interface IPlayer extends IEntity {
 
     public IInventory getInventory();
 
-    public IItemStack getHeldItemStack(IHand hand);
+    public IItemStack getHeldItemStack(EHand hand);
 
 }

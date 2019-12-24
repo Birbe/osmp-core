@@ -4,6 +4,6 @@ public interface IItem {
 
     public String getName();
 
-    public int getId();
+    public String getId();
 
 }

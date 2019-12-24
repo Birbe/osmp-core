@@ -6,8 +6,8 @@ public interface IBlock {
 
     public String getName();
 
-    public int getId();
+    public String getId();
 
-    public ILocation getPosition();
+    public ILocation getLocation();
 
 }
