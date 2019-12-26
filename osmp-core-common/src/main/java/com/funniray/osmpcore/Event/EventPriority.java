@@ -1,4 +1,4 @@
-package com.funniray.osmpcore.Events;
+package com.funniray.osmpcore.Event;
 
 public enum EventPriority {
 

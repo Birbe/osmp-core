@@ -10,4 +10,6 @@ public interface IPlayer extends IEntity {
 
     public IItemStack getHeldItemStack(EHand hand);
 
+    public String getUsername();
+
 }

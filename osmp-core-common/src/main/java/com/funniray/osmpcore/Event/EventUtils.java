@@ -1,4 +1,4 @@
-package com.funniray.osmpcore.Events;
+package com.funniray.osmpcore.Event;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

@@ -1,8 +1,7 @@
-package com.funniray.osmpcore.Events;
+package com.funniray.osmpcore.Event;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
-import java.util.PriorityQueue;
 
 @Retention(RetentionPolicy.RUNTIME) //So we can read the annotation values at runtime
 public @interface EventHandler {

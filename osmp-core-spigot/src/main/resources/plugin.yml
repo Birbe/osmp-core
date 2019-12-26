@@ -1,5 +1,5 @@
-name: Osmp Core
-version: @version@
+name: OSMC-Core
+version: 1.0
 main: com.funniray.osmpcore.OsmpCoreSpigot
 api-version: 1.13
 authors: [Funniray, Birb]

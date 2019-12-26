@@ -26,9 +26,7 @@ public class JarLoader {
     public ArrayList<File> getJarsInPath(File file) throws IOException, NoSuchMethodException {
         ArrayList<File> out = new ArrayList<File>();
         Files.list(file.toPath()).forEach(path -> {
-            if(path.endsWith(".jar")) {
-                out.add(path.toFile());
-            }
+            out.add(path.toFile());
         });
         return out;
     }
@@ -47,14 +45,15 @@ public class JarLoader {
         return gson.fromJson(text, MinipackInfo.class);
     }
 
-    public Minipack loadMinipackJar(File file, String mainClass) throws MalformedURLException, NoSuchMethodException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException {
+    public Minipack loadMinipackJar(File file, MinipackInfo info) throws MalformedURLException, NoSuchMethodException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException {
         URLClassLoader child = new URLClassLoader(
                 new URL[]{file.toURI().toURL()},
                 this.getClass().getClassLoader()
         );
 
-        Class classToLoad = Class.forName(mainClass, true, child);
+        Class classToLoad = Class.forName(info.mainClass, true, child);
         Minipack minipack = (Minipack) classToLoad.newInstance();
+        minipack.info = info;
         return minipack;
     }
 

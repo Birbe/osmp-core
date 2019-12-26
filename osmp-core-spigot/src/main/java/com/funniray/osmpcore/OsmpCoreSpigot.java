@@ -1,21 +1,17 @@
 package com.funniray.osmpcore;
 
-import com.funniray.osmpcore.JarLoader.JarLoader;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public final class OsmpCoreSpigot extends JavaPlugin {
-
-    private OSMP osmp;
 
     @Override
     public void onEnable() {
         // Plugin startup login
+        OSMC.getPackManager().loadJars();
+        OSMC.getPackManager().onEnable();
 
-        this.osmp = new OSMP();
-        osmp.onEnable();
+        Bukkit.getPluginManager().registerEvents(new SpigotEventListener(), this);
     }
 
     @Override

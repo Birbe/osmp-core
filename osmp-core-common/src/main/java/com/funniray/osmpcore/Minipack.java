@@ -1,10 +1,11 @@
 package com.funniray.osmpcore;
 
-import com.funniray.osmpcore.Events.EventListener;
+import com.funniray.osmpcore.Event.EventListener;
 
 public abstract class Minipack {
 
     public EventListener eventHandler;
+    public MinipackInfo info;
 
     public Minipack() {}
 
@@ -16,4 +17,7 @@ public abstract class Minipack {
 
     }
 
+    public MinipackInfo getInfo() {
+        return info;
+    }
 }
