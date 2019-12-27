@@ -27,6 +27,7 @@ public class EventBus {
 
             Class implementedInterface = event.getClass().getInterfaces()[0];
             ArrayList<HandlerListenerPair> methods = handlers.get(implementedInterface);
+            if(methods == null || methods.size() == 0) continue;
 
             for(HandlerListenerPair pair : methods) {
                 try {

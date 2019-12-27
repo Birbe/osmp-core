@@ -2,15 +2,18 @@ package com.funniray.osmpcore.Interface.World;
 
 import com.funniray.osmpcore.Interface.Block.BukkitBlock;
 import com.funniray.osmpcore.Interface.Block.IBlock;
-import com.funniray.osmpcore.WorldManager;
+import com.funniray.osmpcore.ResourceManager;
 import org.bukkit.Location;
+import org.bukkit.block.Block;
+
+import javax.annotation.Resource;
 
 public class BukkitLocation extends BukkitPosition implements ILocation {
 
     private BukkitWorld world;
 
     public BukkitLocation(Location l) {
-        this.world = WorldManager.getWorld(l.getWorld());
+        this.world = (BukkitWorld) ResourceManager.get(l, BukkitWorld.class);
         this.x = l.getX();
         this.y = l.getY();
         this.z = l.getZ();
@@ -28,7 +31,8 @@ public class BukkitLocation extends BukkitPosition implements ILocation {
 
     @Override
     public IBlock getBlock() {
-        return new BukkitBlock(world.getWorld().getBlockAt( (int) x, (int) y, (int) z ));
+        Block target = world.getWorld().getBlockAt( (int) x, (int) y, (int) z );
+        return (BukkitBlock) ResourceManager.get(target, BukkitBlock.class);
     }
 
 }

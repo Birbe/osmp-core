@@ -30,11 +30,10 @@ public class ResourceManager {
     public static Object get(Object bukkit, Class target) {
         if(!resources.containsKey(bukkit)) {
             Object osmcObject = null;
-            System.out.println(bukkit.getClass().getSuperclass());
             try {
                 //Constructor constructor = recurseFindConstructor(bukkit.getClass(), target);
                 Constructor constructor = target.getConstructors()[0];
-                osmcObject = constructor.newInstance(bukkit);
+                osmcObject = constructor.newInstance();
             } catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {
