@@ -33,7 +33,7 @@ public class ResourceManager {
             try {
                 //Constructor constructor = recurseFindConstructor(bukkit.getClass(), target);
                 Constructor constructor = target.getConstructors()[0];
-                osmcObject = constructor.newInstance();
+                osmcObject = constructor.newInstance(bukkit);
             } catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {

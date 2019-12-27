@@ -13,7 +13,7 @@ public class BukkitLocation extends BukkitPosition implements ILocation {
     private BukkitWorld world;
 
     public BukkitLocation(Location l) {
-        this.world = (BukkitWorld) ResourceManager.get(l, BukkitWorld.class);
+        this.world = (BukkitWorld) ResourceManager.get(l.getWorld(), BukkitWorld.class);
         this.x = l.getX();
         this.y = l.getY();
         this.z = l.getZ();

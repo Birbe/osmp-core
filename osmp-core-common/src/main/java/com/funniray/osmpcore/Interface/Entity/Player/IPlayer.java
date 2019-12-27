@@ -6,10 +6,16 @@ import com.funniray.osmpcore.Interface.Item.IItemStack;
 
 public interface IPlayer extends IEntity {
 
-    public IInventory getInventory();
+    IInventory getInventory();
 
-    public IItemStack getHeldItemStack(EHand hand);
+    IItemStack getHeldItemStack(EHand hand);
 
-    public String getUsername();
+    String getUsername();
+
+    void kick();
+
+    void kick(String reason);
+
+    void sendMessage(String message);
 
 }

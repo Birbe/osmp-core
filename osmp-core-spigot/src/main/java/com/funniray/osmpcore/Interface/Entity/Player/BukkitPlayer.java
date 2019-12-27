@@ -30,4 +30,19 @@ public class BukkitPlayer extends BukkitEntity implements IPlayer {
         return player.getName();
     }
 
+    @Override
+    public void kick() {
+        this.player.kickPlayer("No reason provided.");
+    }
+
+    @Override
+    public void kick(String reason) {
+        this.player.kickPlayer(reason);
+    }
+
+    @Override
+    public void sendMessage(String message) {
+        this.player.sendRawMessage(message);
+    }
+
 }
