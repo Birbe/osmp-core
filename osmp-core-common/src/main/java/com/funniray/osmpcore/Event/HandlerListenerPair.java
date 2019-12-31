@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 public class HandlerListenerPair {
 
-    public EventListener listener;
+    public Object listener;
     public Method handler;
 
 }

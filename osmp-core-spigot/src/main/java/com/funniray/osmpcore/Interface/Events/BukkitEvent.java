@@ -1,6 +1,6 @@
 package com.funniray.osmpcore.Interface.Events;
 
-import com.funniray.osmpcore.Event.IEvent;
+import com.funniray.osmpcore.Event.Event;
 
-public class BukkitEvent implements IEvent {
+public class BukkitEvent implements Event {
 }

@@ -9,7 +9,7 @@ import org.spongepowered.api.plugin.Plugin;
 @Plugin(
         id = "osmp-core",
         name = "Osmp Core",
-        description = "Open Soure Minipack Core for Sponge",
+        description = "Open Source Minipack Core for Sponge",
         url = "https://funniray.com",
         authors = {
                 "Funniray",

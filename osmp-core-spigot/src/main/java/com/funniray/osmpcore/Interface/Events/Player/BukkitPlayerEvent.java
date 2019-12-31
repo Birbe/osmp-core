@@ -1,10 +1,10 @@
 package com.funniray.osmpcore.Interface.Events.Player;
 
-import com.funniray.osmpcore.Event.Events.Player.IPlayerEvent;
+import com.funniray.osmpcore.Event.Events.Player.PlayerEvent;
 import com.funniray.osmpcore.Interface.Entity.Player.BukkitPlayer;
-import com.funniray.osmpcore.Interface.Entity.Player.IPlayer;
+import com.funniray.osmpcore.Interface.Entity.Player.Player;
 
-public class BukkitPlayerEvent implements IPlayerEvent {
+public class BukkitPlayerEvent implements PlayerEvent {
 
     protected BukkitPlayer player;
 
@@ -12,7 +12,7 @@ public class BukkitPlayerEvent implements IPlayerEvent {
         this.player = player;
     }
 
-    public IPlayer getPlayer() {
+    public Player getPlayer() {
         return this.player;
     }
 

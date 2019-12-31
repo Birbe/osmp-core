@@ -1,12 +1,12 @@
 package com.funniray.osmpcore;
 
-import com.funniray.osmpcore.Event.IEvent;
+import com.funniray.osmpcore.Command.CommandListener;
+import com.funniray.osmpcore.Event.Event;
 import com.funniray.osmpcore.Event.EventBus;
 import com.funniray.osmpcore.Event.EventListener;
 import com.funniray.osmpcore.JarLoader.JarLoader;
 
 import java.io.File;
-import java.lang.reflect.Array;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
@@ -46,8 +46,12 @@ public class PackManager {
         OSMC.log("Registering listener of "+pack.getInfo().name);
     }
 
-    public IEvent handleEvent(IEvent event) {
-        return eventBus.handleEvent(event);
+    public void registerCommandHandler(CommandListener listener, Minipack pack) {
+
+    }
+
+    public Event handleEvent(Event event) {
+        return eventBus.handlEvent(event);
     }
 
     public void onEnable() {

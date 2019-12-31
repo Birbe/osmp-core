@@ -1,10 +1,8 @@
 package com.funniray.osmpcore.Interface.Item;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 
-public class BukkitItem implements IItem {
+public class BukkitItem implements Item {
 
     private Material material;
 

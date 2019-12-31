@@ -1,26 +1,25 @@
 package com.funniray.osmpcore.Interface.Inventory;
 
-import com.funniray.osmpcore.Interface.Item.IItemStack;
+import com.funniray.osmpcore.Interface.Item.ItemStack;
 import com.funniray.osmpcore.Interface.Item.BukkitItemStack;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class BukkitArmoredInventory extends OInventory implements IArmoredInventory {
+public class BukkitArmoredInventory extends BukkitInventory implements ArmoredInventory {
 
-    private ArrayList<IItemStack> armor;
+    private ArrayList<ItemStack> armor;
     private PlayerInventory bukkitInventory;
 
     public BukkitArmoredInventory(PlayerInventory bukkitInventory) {
         super(bukkitInventory);
         this.bukkitInventory = bukkitInventory;
 
-        ItemStack head = bukkitInventory.getArmorContents()[0];
-        ItemStack chest = bukkitInventory.getArmorContents()[1];
-        ItemStack legs = bukkitInventory.getArmorContents()[2];
-        ItemStack boots = bukkitInventory.getArmorContents()[3];
+        org.bukkit.inventory.ItemStack head = bukkitInventory.getArmorContents()[0];
+        org.bukkit.inventory.ItemStack chest = bukkitInventory.getArmorContents()[1];
+        org.bukkit.inventory.ItemStack legs = bukkitInventory.getArmorContents()[2];
+        org.bukkit.inventory.ItemStack boots = bukkitInventory.getArmorContents()[3];
 
         if(head != null) armor.set(0,new BukkitItemStack(head));
         if(chest != null) armor.set(1,new BukkitItemStack(chest));
@@ -29,7 +28,7 @@ public class BukkitArmoredInventory extends OInventory implements IArmoredInvent
     }
 
     @Override
-    public Collection<IItemStack> getArmorSlots() {
+    public Collection<ItemStack> getArmorSlots() {
         return armor;
     }
 

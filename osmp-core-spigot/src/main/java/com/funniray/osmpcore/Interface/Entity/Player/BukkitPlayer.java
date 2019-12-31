@@ -1,27 +1,26 @@
 package com.funniray.osmpcore.Interface.Entity.Player;
 
 import com.funniray.osmpcore.Interface.Entity.BukkitEntity;
-import com.funniray.osmpcore.Interface.Inventory.IInventory;
-import com.funniray.osmpcore.Interface.Item.IItemStack;
-import org.bukkit.entity.Player;
+import com.funniray.osmpcore.Interface.Inventory.Inventory;
+import com.funniray.osmpcore.Interface.Item.ItemStack;
 
-public class BukkitPlayer extends BukkitEntity implements IPlayer {
+public class BukkitPlayer extends BukkitEntity implements Player {
 
-    private Player player;
+    private org.bukkit.entity.Player player;
 
-    public BukkitPlayer(Player player) {
+    public BukkitPlayer(org.bukkit.entity.Player player) {
         super(player);
 
         this.player = player;
     }
 
     @Override
-    public IInventory getInventory() {
+    public Inventory getInventory() {
         return null;
     }
 
     @Override
-    public IItemStack getHeldItemStack(EHand hand) {
+    public ItemStack getHeldItemStack(Hand hand) {
         return null;
     }
 
@@ -43,6 +42,11 @@ public class BukkitPlayer extends BukkitEntity implements IPlayer {
     @Override
     public void sendMessage(String message) {
         this.player.sendRawMessage(message);
+    }
+
+    @Override
+    public boolean isAdmin() {
+        return player.isOp();
     }
 
 }

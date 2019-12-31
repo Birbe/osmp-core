@@ -1,22 +1,21 @@
 package com.funniray.osmpcore.Interface.Block;
 
-import com.funniray.osmpcore.Interface.World.BukkitLocation;
-import com.funniray.osmpcore.Interface.World.ILocation;
-import org.bukkit.block.Block;
+import com.funniray.osmpcore.Factory.LocationFactory;
+import com.funniray.osmpcore.Interface.World.Location;
 
-public class BukkitBlock implements IBlock {
+public class BukkitBlock implements Block {
 
-    private Block block;
-    private ILocation location;
+    private org.bukkit.block.Block block;
+    private Location location;
 
-    public BukkitBlock(Block block) {
+    public BukkitBlock(org.bukkit.block.Block block) {
         this.block = block;
-        this.location = new BukkitLocation(block.getLocation());
+        this.location = LocationFactory.getLocation(block.getLocation());
     }
 
     @Override
     public String getName() {
-        return null;
+        return "wip";
     }
 
     @Override
@@ -25,7 +24,7 @@ public class BukkitBlock implements IBlock {
     }
 
     @Override
-    public ILocation getLocation() {
+    public Location getLocation() {
         return location;
     }
 
