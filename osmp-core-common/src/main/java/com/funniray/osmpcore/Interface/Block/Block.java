@@ -4,10 +4,12 @@ import com.funniray.osmpcore.Interface.World.Location;
 
 public interface Block {
 
-    public String getName();
+    String getName();
 
-    public String getId();
+    String getKey();
 
-    public Location getLocation();
+    Location getLocation();
+
+    void setType(String key);
 
 }

@@ -2,6 +2,7 @@ package com.funniray.osmpcore.Interface.Block;
 
 import com.funniray.osmpcore.Factory.LocationFactory;
 import com.funniray.osmpcore.Interface.World.Location;
+import org.bukkit.Material;
 
 public class BukkitBlock implements Block {
 
@@ -19,13 +20,18 @@ public class BukkitBlock implements Block {
     }
 
     @Override
-    public String getId() {
+    public String getKey() {
         return block.getType().getKey().toString();
     }
 
     @Override
     public Location getLocation() {
         return location;
+    }
+
+    @Override
+    public void setType(String key) {
+        this.block.setType(Material.getMaterial(key));
     }
 
 }

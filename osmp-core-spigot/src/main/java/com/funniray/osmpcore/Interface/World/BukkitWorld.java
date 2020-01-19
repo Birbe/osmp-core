@@ -4,7 +4,9 @@ import com.funniray.osmpcore.Factory.LocationFactory;
 import com.funniray.osmpcore.Interface.Block.Block;
 import com.funniray.osmpcore.Interface.Block.BukkitBlock;
 import com.funniray.osmpcore.Interface.Entity.BukkitEntity;
+import com.funniray.osmpcore.Interface.Entity.BukkitEntityArmorStand;
 import com.funniray.osmpcore.Interface.Entity.Entity;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 
 public class BukkitWorld implements World {
@@ -36,14 +38,17 @@ public class BukkitWorld implements World {
     @Override
     public Entity spawnEntity(String name, Location l) {
         BukkitEntity out;
-        EntityType eType = null;
-        for(EntityType type : EntityType.values()) {
+        EntityType eType = EntityType.fromName(name);
+        /*for(EntityType type : EntityType.values()) {
             if(type.getName().equalsIgnoreCase(name)) eType = type;
-        }
+        }*/
         if(eType == null) return null;
         else {
-            out = new BukkitEntity(world.spawnEntity(LocationFactory.getBukkit(l), eType));
-            return out;
+            org.bukkit.entity.Entity e = world.spawnEntity(LocationFactory.getBukkit(l), eType);
+            if(e instanceof ArmorStand) return new BukkitEntityArmorStand((ArmorStand) e);
+            else {
+                return new BukkitEntity(e);
+            }
         }
     }
 

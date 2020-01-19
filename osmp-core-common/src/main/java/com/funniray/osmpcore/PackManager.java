@@ -1,7 +1,7 @@
 package com.funniray.osmpcore;
 
 import com.funniray.osmpcore.Command.CommandListener;
-import com.funniray.osmpcore.Event.Event;
+import com.funniray.osmpcore.Event.BukkitEvent;
 import com.funniray.osmpcore.Event.EventBus;
 import com.funniray.osmpcore.Event.EventListener;
 import com.funniray.osmpcore.JarLoader.JarLoader;
@@ -50,8 +50,8 @@ public class PackManager {
 
     }
 
-    public Event handleEvent(Event event) {
-        return eventBus.handlEvent(event);
+    public BukkitEvent handleEvent(BukkitEvent event) {
+        return eventBus.handleEvent(event);
     }
 
     public void onEnable() {

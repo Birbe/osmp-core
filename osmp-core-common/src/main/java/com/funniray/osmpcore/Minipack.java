@@ -6,6 +6,7 @@ public abstract class Minipack {
 
     public EventListener eventHandler;
     public MinipackInfo info;
+    public boolean isEnabled;
 
     public Minipack() {}
 
@@ -19,5 +20,9 @@ public abstract class Minipack {
 
     public MinipackInfo getInfo() {
         return info;
+    }
+
+    public boolean isEnabled() {
+        return isEnabled;
     }
 }

@@ -12,6 +12,10 @@ public class Location {
     private float yaw;
     private float pitch;
 
+    public Location(World world, double x, double y, double z) {
+        this(world, x, y, z, 0, 0);
+    }
+
     public Location(World world, double x, double y, double z, float yaw, float pitch) {
         this.x = x;
         this.y = y;
@@ -25,7 +29,7 @@ public class Location {
 
     public World getWorld() {
         return world;
-    };
+    }
 
     public Block getBlock() {
         return world.getBlockAt((int)x,(int)y,(int)z);

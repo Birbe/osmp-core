@@ -1,13 +1,16 @@
 package com.funniray.osmpcore;
 
+import com.funniray.osmpcore.Factory.OSMCFactory;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class OsmpCoreSpigot extends JavaPlugin {
+public final class OSMCCoreSpigot extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup login
+        // Plugin startup logic
+        OSMC.setFactory(new OSMCFactory());
+
         OSMC.getPackManager().loadJars();
         OSMC.getPackManager().onEnable();
 

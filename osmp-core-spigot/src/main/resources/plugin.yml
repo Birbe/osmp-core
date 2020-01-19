@@ -1,6 +1,6 @@
 name: OSMC-Core
 version: 1.0
-main: com.funniray.osmpcore.OsmpCoreSpigot
+main: com.funniray.osmpcore.OSMCCoreSpigot
 api-version: 1.13
 authors: [Funniray, Birb]
 description: Open Soure Minigame Core for Spigot

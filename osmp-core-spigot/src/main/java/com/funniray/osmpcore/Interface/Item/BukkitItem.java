@@ -10,15 +10,8 @@ public class BukkitItem implements Item {
         this.material = material;
     }
 
-    @Override
-    public String getName() {
+    public String getKey() {
         ItemStack dummyStack = new ItemStack(material);
-        return dummyStack.getItemMeta().getDisplayName();
-    }
-
-    @Override
-    public String getId() {
-        ItemStack dummyStack = new ItemStack(material);
-        return dummyStack.getType().getKey().toString();
+        return dummyStack.getType().getKey().getKey();
     }
 }

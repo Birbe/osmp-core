@@ -1,5 +1,8 @@
 package com.funniray.osmpcore.Interface.Item;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+
 public class BukkitItemStack implements ItemStack {
 
     private org.bukkit.inventory.ItemStack itemStack;
@@ -30,6 +33,14 @@ public class BukkitItemStack implements ItemStack {
     @Override
     public int getMaxDurability() {
         return 0;
+    }
+
+    public org.bukkit.inventory.ItemStack getBukkit() {
+        return itemStack;
+    }
+
+    public static org.bukkit.inventory.ItemStack getBukkit(String name, int quantity) {
+        return new org.bukkit.inventory.ItemStack(Material.getMaterial(name.toUpperCase()), quantity);
     }
 
 }

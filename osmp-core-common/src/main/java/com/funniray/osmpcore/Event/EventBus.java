@@ -10,18 +10,18 @@ import java.util.HashMap;
 
 public class EventBus {
 
-    protected HashMap<EventPriority, HashMap< Class<? extends Event>, ArrayList<HandlerListenerPair>>> eventHandlers = new HashMap<>(); //Event priorities -> Event -> [Actual method handlers]
+    protected HashMap<EventPriority, HashMap< Class<? extends BukkitEvent>, ArrayList<HandlerListenerPair>>> eventHandlers = new HashMap<>(); //Event priorities -> Event -> [Actual method handlers]
 
-    public void addHandler(EventPriority priority, Class<? extends Event> event, HandlerListenerPair pair) {
+    public void addHandler(EventPriority priority, Class<? extends BukkitEvent> event, HandlerListenerPair pair) {
         if(!eventHandlers.containsKey(priority)) eventHandlers.put(priority, new HashMap<>());
         if(!eventHandlers.get(priority).containsKey(event)) eventHandlers.get(priority).put(event,new ArrayList<>());
         eventHandlers.get(priority).get(event).add(pair);
     }
 
-    public Event handlEvent(Event event) {
+    public BukkitEvent handleEvent(BukkitEvent event) {
         for(EventPriority priority : EventPriority.values()) {
             if(!eventHandlers.containsKey(priority)) continue;
-            HashMap< Class<? extends Event>, ArrayList<HandlerListenerPair>> handlers = eventHandlers.get(priority);
+            HashMap< Class<? extends BukkitEvent>, ArrayList<HandlerListenerPair>> handlers = eventHandlers.get(priority);
 
             Class implementedInterface = event.getClass().getInterfaces()[0];
             ArrayList<HandlerListenerPair> methods = handlers.get(implementedInterface);
@@ -30,7 +30,7 @@ public class EventBus {
             for(HandlerListenerPair pair : methods) {
                 try {
                     Parameter[] params = pair.handler.getParameters();
-                    Class<?> target = params[0].getType().asSubclass(Event.class);
+                    Class<?> target = params[0].getType().asSubclass(BukkitEvent.class);
                     pair.handler.invoke(pair.listener, target.cast(event));
                 } catch (IllegalAccessException | InvocationTargetException e) {
                     e.printStackTrace();
@@ -45,7 +45,7 @@ public class EventBus {
         for(Method method : methods) {
             Parameter[] params = method.getParameters();
             EventHandler annotation = method.getAnnotation(EventHandler.class);
-            Class<? extends Event> target = params[0].getType().asSubclass(Event.class);
+            Class<? extends BukkitEvent> target = params[0].getType().asSubclass(BukkitEvent.class);
             HandlerListenerPair pair = new HandlerListenerPair();
             pair.listener = listener;
             pair.handler = method;

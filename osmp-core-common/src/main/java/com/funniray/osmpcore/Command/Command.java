@@ -1,7 +1,5 @@
 package com.funniray.osmpcore.Command;
 
-import com.funniray.osmpcore.Event.Event;
-
 public abstract class Command {
 
     public String getName() {
